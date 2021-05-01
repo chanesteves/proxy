@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/resources/apiQuery', 'ResourceController@apiQuery');
+Route::middleware(['cors'])->group(function () {
+    Route::get('/resources/apiQuery', 'ResourceController@apiQuery');
+});
